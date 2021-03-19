@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ChannelApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <!--ユーザーコンテンツバー-->
+    <section class="user_bar">
+      <div class="log_box">
+        <div class="logo">
+          <span></span>
+          <%= link_to("Home","/")%>
+        </div>
+        <div class="name">
+          <h2><span><em class="fad fa-user-circle"></em></span>山田たろう</h2>
+            <p>ID</p>
+          </div>
+        </div>
+        <div class="personal">
+            <ul>
+                <li><a href="#Search">検索</a></li>
+                <li><a href="#profile">プロフィール</a></li>
+                <li>
+                  <%= link_to("ログイン","/users/login_form")%>
+                </li>
+                <li>
+                  <%= link_to("新規登録","/signup")%>
+                </li>
+            </ul>
+        </div>
+        <div class="putting">
+            <input type="submit" class="submits" value="投稿">
+            <button type="button" class="sbumit_menu"><em class="fas fa-plus"></em></button>
+        </div>
+    </section>
+
+    <%= yield %>
+  </body>
+</html>
